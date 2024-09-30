@@ -1,0 +1,47 @@
+// /src/assets/styles/styles.scss
+
+// Variáveis de estilo
+@import 'variables';
+
+// Estilizando o body
+body {
+    font-family: $font-family-base;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: .5rem;
+}
+
+// Estilos para o título
+h1 {
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.container {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+
+    h1{
+        font-size: 4rem;
+    }
+    .logo {
+        font-family: $font-family-logo;
+    }
+
+    .row{
+        padding: 1rem;
+    }
+
+    // .card-text{
+    //     text-indent: 1rem;
+    // }
+}
+
+.teste {
+    border:  .5rem solid #000;
+}
+
