@@ -20,6 +20,9 @@ return (
                 <a className="nav-link" href="#">Vantagens</a>
                 </li>
                 <li className="nav-item">
+                <a className="nav-link" href="#">Desvantagens</a>
+                </li>
+                <li className="nav-item">
                 <a className="nav-link" href="#">Arquetipos</a>
                 </li>
             </ul>
