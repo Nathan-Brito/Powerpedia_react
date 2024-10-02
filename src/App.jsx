@@ -53,8 +53,8 @@ function App() {
   return (
     <div className="container">
       <Navbar/>
-      <h1 className="text-center mt-5 logo">Powerpedia</h1>
-      <h5 className="text-center mt-2 mb-5 logo">Aqui você fica mais forte!</h5>
+      <p className="text-center mt-5 logo">Powerpedia</p>
+      <p className="text-center mb-5 sub-logo">Aqui você fica mais forte!</p>
       
       <input
         type="text"
@@ -64,7 +64,7 @@ function App() {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      <div className="row">
+      <div className="row pericias">
         {filteredPericias.map((pericias) => (
           <Pericias
             key={pericias.id}
@@ -72,7 +72,7 @@ function App() {
         ))}
       </div>
 
-      <div className="row">
+      <div className="row vantagens">
         {filteredVantagens.map((vantagens) => (
           <Vantagens
             key={vantagens.id}

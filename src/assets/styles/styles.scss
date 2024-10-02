@@ -6,7 +6,7 @@
 // Estilizando o body
 body {
     font-family: $font-family-base;
-    background-color: #f8f9fa;
+    background-color: #daf3ff !important;
     margin: 0;
     padding: 1rem;
 }
@@ -28,12 +28,29 @@ h1 {
     h1{
         font-size: 4rem;
     }
-    .logo {
+    .logo, .sub-logo {
         font-family: $font-family-logo;
+    }
+    .logo {
+        font-size: 2.5rem;
+    }
+    .sub-logo {
+        font-size: 1rem;
     }
 
     .row{
         padding: 1rem;
+    }
+
+    .pericias, .vantagens{
+        border-radius: 1rem;
+        margin: .5rem;
+    }
+    .pericias{
+        background-color: #7cd8fd;
+    }
+    .vantagens{
+        background-color: #a5fdb7;
     }
 
     // .card-text{
