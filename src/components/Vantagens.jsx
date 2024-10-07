@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 
 const Vantagens = ({ vantagens }) => {
 
-    console.log(vantagens)
     return (
         <div className="col-md-4 mb-4">
             <div className="card">

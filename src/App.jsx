@@ -5,16 +5,18 @@ import { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
 import Pericias from "./components/Pericias";
 import Vantagens from "./components/Vantagens";
+import Desvantagens from "./components/Desvantagens";
 
 function App() {
 
   const [pericias, setPericias] = useState([]);
   const [vantagens, setVantagens] = useState([]);
+  const [desvantagens, setDesvantagens] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const fetchPericias = async () => {
     const { data, error } = await supabase
-    .from('Pericias')
+    .from('pericias')
     .select('*')
     .order('id', { ascending: true });
 
@@ -27,7 +29,7 @@ function App() {
 
   const fetchVantagens = async () => {
     const { data, error } = await supabase
-    .from('Vantagens')
+    .from('vantagens')
     .select('*')
     .order('id', { ascending: true });
 
@@ -37,10 +39,23 @@ function App() {
       setVantagens(data);
     }
   }
+  const fetchDesvantagens = async () => {
+    const { data, error } = await supabase
+    .from('desvantagens')
+    .select('*')
+    .order('id', { ascending: true });
+
+    if (error) {
+      console.error('Erro ao buscar Vantagens', error);
+    } else {
+      setDesvantagens(data);
+    }
+  }
 
   useEffect(() => {
     fetchPericias();
     fetchVantagens();
+    fetchDesvantagens();
   }, []);
 
   const filteredPericias = pericias.filter((pericia) =>
@@ -48,6 +63,9 @@ function App() {
   );
   const filteredVantagens = vantagens.filter((vantagens) =>
     vantagens.titulo.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const filteredDesvantagens = desvantagens.filter((desvantagens) =>
+    desvantagens.titulo.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -77,6 +95,14 @@ function App() {
           <Vantagens
             key={vantagens.id}
             vantagens={vantagens} />
+        ))}
+      </div>
+
+      <div className="row desvantagens">
+        {filteredDesvantagens.map((desvantagens) => (
+          <Desvantagens
+            key={desvantagens.id}
+            desvantagens={desvantagens} />
         ))}
       </div>
     </div>

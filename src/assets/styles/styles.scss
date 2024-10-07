@@ -40,22 +40,20 @@ h1 {
 
     .row{
         padding: 1rem;
+        border-radius: 1rem;
+        margin: 2rem .5rem 2rem .5rem;
     }
 
-    .pericias, .vantagens{
-        border-radius: 1rem;
-        margin: .5rem;
-    }
     .pericias{
         background-color: #7cd8fd;
     }
     .vantagens{
         background-color: #a5fdb7;
     }
+    .desvantagens{
+        background-color: #ff6964;
+    }
 
-    // .card-text{
-    //     text-indent: 1rem;
-    // }
 }
 
 .teste {
