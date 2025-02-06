@@ -4,6 +4,7 @@ import { supabase } from './api/supabase';
 import Pericias from './components/Pericias';
 import Vantagens from './components/Vantagens';
 import Desvantagens from './components/Desvantagens';
+import Arquetipos from './components/Arquetipos';
 
 
 export interface Pericia {
@@ -22,6 +23,13 @@ export interface Vantagem {
 export interface Desvantagem {
     id: number;
     ganho: string;
+    titulo: string;
+    descricao: string;
+}
+
+export interface Arquetipo {
+    id: number;
+    custo: string;
     titulo: string;
     descricao: string;
 }
@@ -46,6 +54,7 @@ export const useDataFetch = () => {
   const [pericias, setPericias] = useState<Pericia[]>([]);
   const [vantagens, setVantagens] = useState<Vantagem[]>([]);
   const [desvantagens, setDesvantagens] = useState<Desvantagem[]>([]);
+  const [arquetipos, setArquetipos] = useState<Arquetipo[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const fetchPericias = async () => {
@@ -87,10 +96,24 @@ export const useDataFetch = () => {
     }
   };
 
+  const fetchArquetipos = async () => {
+    const { data, error } = await supabase
+      .from("arquetipos")
+      .select("*")
+      .order("id", { ascending: true });
+
+    if (error) {
+      console.error("Erro ao buscar Arquetipos", error);
+    } else {
+      setArquetipos(data || []);
+    }
+  };
+
   useEffect(() => {
     fetchPericias();
     fetchVantagens();
     fetchDesvantagens();
+    fetchArquetipos();
   }, []);
 
   const filteredPericias = pericias.filter((pericia) =>
@@ -102,41 +125,48 @@ export const useDataFetch = () => {
   const filteredDesvantagens = desvantagens.filter((desvantagem) =>
     desvantagem.titulo.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  const filteredArquetipos = arquetipos.filter((arquetipos) =>
+    arquetipos.titulo.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return {
     pericias: filteredPericias,
     vantagens: filteredVantagens,
     desvantagens: filteredDesvantagens,
+    arquetipos: filteredArquetipos,
     searchTerm,
     setSearchTerm,
   };
 };
 
 const App: React.FC = () => {
-  const { pericias, vantagens, desvantagens, searchTerm, setSearchTerm } = useDataFetch();
+  const { pericias, vantagens, desvantagens, arquetipos, searchTerm, setSearchTerm } = useDataFetch();
   
   return (
-    <div className="container">
-      <p className="text-center mt-5 smooch-sans-titulo">Powerpedia</p>
-      <p className="text-center mb-5">Aqui você fica mais forte!</p>
-
+    <div className="p-6">
       <BuscaInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-      <div className="row pericias">
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {pericias.map((pericia) => (
           <Pericias key={pericia.id} pericias={pericia} />
         ))}
       </div>
 
-      <div className="row vantagens">
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {vantagens.map((vantagem) => (
           <Vantagens key={vantagem.id} vantagens={vantagem} />
         ))}
       </div>
 
-      <div className="row desvantagens">
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {desvantagens.map((desvantagem) => (
           <Desvantagens key={desvantagem.id} desvantagens={desvantagem} />
+        ))}
+      </div>
+
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {arquetipos.map((arquetipos) => (
+          <Arquetipos key={arquetipos.id} arquetipos={arquetipos} />
         ))}
       </div>
     </div>
@@ -147,10 +177,10 @@ export function PagPericias() {
   const { pericias, searchTerm, setSearchTerm } = useDataFetch();
 
   return (
-      <div className="container">
+      <div className="p-6">
         <BuscaInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-      <div className="row pericias">
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {pericias.map((pericia) => (
           <Pericias key={pericia.id} pericias={pericia} />
         ))}
@@ -161,10 +191,10 @@ export function PagPericias() {
 export function PagVantagens() {
   const { vantagens, searchTerm, setSearchTerm } = useDataFetch();
   return (
-      <div className="container">
+      <div className="p-6">
           <BuscaInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-        <div className="row vantagens">
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {vantagens.map((vantagem) => (
             <Vantagens key={vantagem.id} vantagens={vantagem} />
           ))}
@@ -175,20 +205,29 @@ export function PagVantagens() {
 export function PagDesvantagens() {
   const { desvantagens, searchTerm, setSearchTerm } = useDataFetch();
   return (
-      <div className="container">
+      <div className="p-6">
         <BuscaInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-        <div className="row desvantagens">
-        {desvantagens.map((desvantagem) => (
-          <Desvantagens key={desvantagem.id} desvantagens={desvantagem} />
-        ))}
-      </div>
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {desvantagens.map((desvantagem) => (
+            <Desvantagens key={desvantagem.id} desvantagens={desvantagem} />
+          ))}
+        </div>
       </div>
   )
 }
 export function PagArquetipos() {
+  const { arquetipos, searchTerm, setSearchTerm } = useDataFetch();
   return (
-      <p className="text-orage-500">Conteudo dos Arquetipos</p>
+      <div className="p-6">
+        <BuscaInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {arquetipos.map((arquetipos) => (
+            <Arquetipos key={arquetipos.id} arquetipos={arquetipos} />
+          ))}
+        </div>
+      </div>
   )
 }
 export function PagFavoritos() {

@@ -1,5 +1,12 @@
 import { Desvantagem } from '@/App';
 import React from 'react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 interface DesvantagensProps {
   desvantagens: Desvantagem
@@ -7,19 +14,16 @@ interface DesvantagensProps {
 
 const Desvantagens: React.FC<DesvantagensProps> = ({ desvantagens }) => {
   return (
-    <div className="col-md-4 mb-4">
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">{desvantagens.titulo}</h5>
-          <p className="card-text">
-            <i>{desvantagens.ganho}</i>
-          </p>
-          <p
-            className="card-text"
-            dangerouslySetInnerHTML={{ __html: desvantagens.descricao }}
-          ></p>
-        </div>
-      </div>
+    <div>
+      <Card className="relative -skew-x-3 bg-[#fd0046] shadow-[8px_8px_15px_rgba(0,0,0,0.3)] text-white w-[420px] transition duration-300 transform hover:scale-105 hover:z-10">
+        <CardHeader>
+          <CardTitle className='text-4xl'>{desvantagens.titulo}</CardTitle>
+          <CardDescription className='text-white text-3xl'><i>{desvantagens.ganho}</i></CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-2xl'" dangerouslySetInnerHTML={{ __html: desvantagens.descricao }}></p>
+        </CardContent>
+      </Card>
     </div>
   );
 };
