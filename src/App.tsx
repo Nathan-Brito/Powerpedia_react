@@ -47,7 +47,7 @@ const BuscaInput: React.FC<BuscaInputProps> = ({ searchTerm, setSearchTerm }) =>
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
     />
-  );
+  );  
 };
 
 export const useDataFetch = () => {
@@ -143,7 +143,7 @@ const App: React.FC = () => {
   const { pericias, vantagens, desvantagens, arquetipos, searchTerm, setSearchTerm } = useDataFetch();
   
   return (
-    <div className="p-6">
+    <div className="p-4 md:p-6">
       <BuscaInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -232,7 +232,7 @@ export function PagArquetipos() {
 }
 export function PagFavoritos() {
   return (
-      <p className="text-orage-500">Conteudo dos Favoritos</p>
+      <p className="text-orange-500">Conteudo dos Favoritos</p>
   )
 }
 
