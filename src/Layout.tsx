@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router";
+import Footer from "./components/Footer";
 
 export function Layout() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -28,8 +29,8 @@ export function Layout() {
                 <Outlet />
             </div>
 
-            <div className="bg-gray-50 p-4 border-t text-center">
-                TADS &copy; 2025
+            <div className="bg-gray-50 p-4 border-t text-center smooch-sans-corpo">
+                <Footer/>
             </div>
         </div>
     )
