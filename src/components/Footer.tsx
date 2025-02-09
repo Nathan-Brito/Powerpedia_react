@@ -13,10 +13,10 @@ const Footer: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center justify-center md:gap-20 w-full">
                 <div className='flex flex-col justify-center items-center gap-4'>
                     <a href="https://site.jamboeditora.com.br/3det/">
-                        <img src="src/assets/3DeT.png" alt="" className='w-40 rounded'/>
+                        <img src="/assets/3DeT.png" alt="" className='w-40 rounded'/>
                     </a>
                     <a href="https://jamboeditora.com.br/">
-                        <img src="src/assets/Logo-Jambo.png" alt="" className='w-40 bg-black rounded-md p-2'/>
+                        <img src="/assets/Logo-Jambo.png" alt="" className='w-40 bg-black rounded-md p-2'/>
                     </a>
                 </div>
 
