@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                         className="text-gray-500 text-5xl hover:text-black transition duration-300">
                             <FontAwesomeIcon icon={faGithub} />
                         </a>
-                        <a href="mailto:nathansilvabrito@hotmail.com.br" 
+                        <a href="mailto:nathansilvabrito@hotmail.com" 
                         className="text-gray-500 text-5xl hover:text-red-600 transition duration-300">
                             <FontAwesomeIcon icon={faEnvelope} />
                         </a>
