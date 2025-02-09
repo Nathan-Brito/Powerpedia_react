@@ -20,7 +20,7 @@ export function Layout() {
                     <NavLink className="hover:text-[#00fd90] transition duration-500 transform hover:scale-110" to="/vantagens">Vantagens</NavLink>
                     <NavLink className="hover:text-[#fd0046] transition duration-500 transform hover:scale-110" to="/desvantagens">Desvantagens</NavLink>
                     <NavLink className="hover:text-[#fd00ac] transition duration-500 transform hover:scale-110" to="/arquetipos">Arquetipos</NavLink>
-                    <NavLink className="transition duration-500 transform hover:scale-110" to="/favoritos">Favoritos</NavLink>
+                    <NavLink className="hover:text-[#fd6000] transition duration-500 transform hover:scale-110" to="/favoritos">Favoritos</NavLink>
                 </div>
             </div>
 
