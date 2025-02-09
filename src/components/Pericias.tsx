@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-// import { Button } from "@/components/ui/button";
 import { useFavoritos } from "@/context/FavoritosContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +21,7 @@ const Pericias: React.FC<PericiasProps> = ({ pericias }) => {
   
   return (
     <div className='m-2'>
-      <Card className="relative -skew-x-2 bg-[#fdbe00] shadow-[8px_8px_15px_rgba(0,0,0,0.3)] rounded-xl text-black max-w-[430px] w-full transition duration-300 transform hover:scale-105 hover:z-10">
+      <Card className="relative -skew-x-1 sm:-skew-x-2 bg-[#fdbe00] shadow-[8px_8px_15px_rgba(0,0,0,0.3)] rounded-xl text-black max-w-[430px] w-full transition duration-300 transform hover:scale-105 hover:z-10">
         <CardHeader>
           <div className='flex justify-between items-center'>
             <CardTitle className='text-4xl'>{pericias.titulo}</CardTitle> 

@@ -16,7 +16,7 @@ const Vantagens: React.FC<VantagemProps> = ({ vantagens }) => {
       
   return (
     <div>
-      <Card className="relative -skew-x-2 bg-[#00fd90] shadow-[8px_8px_15px_rgba(0,0,0,0.3)] rounded-xl text-black max-w-[430px] w-full transition duration-300 transform hover:scale-105 hover:z-10">
+      <Card className="relative -skew-x-1 sm:-skew-x-2 bg-[#00fd90] shadow-[8px_8px_15px_rgba(0,0,0,0.3)] rounded-xl text-black max-w-[430px] w-full transition duration-300 transform hover:scale-105 hover:z-10">
       <CardHeader>
         <div className='flex justify-between items-center'>
           <CardTitle className='text-4xl'>{vantagens.titulo}</CardTitle> 

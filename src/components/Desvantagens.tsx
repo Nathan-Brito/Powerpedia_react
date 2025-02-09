@@ -22,7 +22,7 @@ const Desvantagens: React.FC<DesvantagensProps> = ({ desvantagens }) => {
   
   return (
     <div>
-      <Card className="relative -skew-x-2 bg-[#fd0046] shadow-[8px_8px_15px_rgba(0,0,0,0.3)] text-white max-w-[420px] w-full transition duration-300 transform hover:scale-105 hover:z-10">
+      <Card className="relative -skew-x-1 sm:-skew-x-2 bg-[#fd0046] shadow-[8px_8px_15px_rgba(0,0,0,0.3)] text-white max-w-[420px] w-full transition duration-300 transform hover:scale-105 hover:z-10">
         <CardHeader>
           <div className='flex justify-between items-center'>
             <CardTitle className='text-4xl'>{desvantagens.titulo}</CardTitle> 
