@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 
 const Footer: React.FC = () => {
@@ -32,15 +33,22 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="m-5 flex flex-col lg:flex-row items-center gap-4">
-                    <a href="https://www.linkedin.com/in/nathan-brito-1750b61b5/" target="_blank" rel="noopener noreferrer" 
-                    className="text-gray-800 text-5xl hover:text-blue-800 transition duration-300">
-                        <FontAwesomeIcon icon={faLinkedin} />
-                    </a>
-                    <a href="https://github.com/Nathan-Brito" target="_blank" rel="noopener noreferrer" 
-                    className="text-gray-800 text-5xl hover:text-gray-600 transition duration-300">
-                        <FontAwesomeIcon icon={faGithub} />
-                    </a>
+                <div>
+                    <h2 className="text-2xl font-bold">Redes do Dev</h2>
+                    <div className="m-5 flex flex-col lg:flex-row items-center gap-4">
+                        <a href="https://www.linkedin.com/in/nathan-brito-1750b61b5/" target="_blank" rel="noopener noreferrer" 
+                        className="text-gray-500 text-5xl hover:text-blue-800 transition duration-300">
+                            <FontAwesomeIcon icon={faLinkedin} />
+                        </a>
+                        <a href="https://github.com/Nathan-Brito" target="_blank" rel="noopener noreferrer" 
+                        className="text-gray-500 text-5xl hover:text-black transition duration-300">
+                            <FontAwesomeIcon icon={faGithub} />
+                        </a>
+                        <a href="mailto:nathansilvabrito@hotmail.com.br" 
+                        className="text-gray-500 text-5xl hover:text-red-600 transition duration-300">
+                            <FontAwesomeIcon icon={faEnvelope} />
+                        </a>
+                    </div>
                 </div>
             </div>
             <h2 className="text-4xl font-bold">Feito de fã para fãs</h2>
