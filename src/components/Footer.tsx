@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     return (
         <div>
             <h2 className="text-4xl font-bold">3D&T é um material da Jambô Editora</h2>
-            <h2 className="text-2xl font-bold">Todos os direitos reservados aos proprietarios</h2>
+            <h2 className="text-2xl font-bold">Todos os direitos reservados aos proprietários</h2>
             <div className="flex flex-col md:flex-row items-center justify-center md:gap-20 w-full">
                 <div className='flex flex-col justify-center items-center gap-4'>
                     <a href="https://site.jamboeditora.com.br/3det/">

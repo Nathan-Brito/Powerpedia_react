@@ -8,6 +8,9 @@ export function Layout() {
     return (
         <div>
             <div className="bg-gray-50 p-4 border-b flex flex-wrap items-center justify-between smooch-sans-titulo">
+                <a href="https://powerpedia-react.vercel.app/">
+                    <img src="/assets/Powerpedia.png" alt="" className='w-30 pl-5'/>
+                </a>
                 <button 
                     className="sm:hidden p-2 border rounded-md focus:outline-none" 
                     onClick={() => setMenuOpen(!menuOpen)}
