@@ -43,10 +43,10 @@ npm run dev
 O projeto estará disponível em http://localhost:5173/.
 
 ## 🛠 Funcionalidades
-✅ Consulta rápida de **perícias, vantagens, desvantagens e arquétipos**
-✅ Interface intuitiva e responsiva
-✅ Busca otimizada para encontrar características com facilidade
-✅ Dados dinâmicos atualizados a partir do banco Supabase
+-✅ Consulta rápida de **perícias, vantagens, desvantagens e arquétipos**
+-✅ Interface intuitiva e responsiva
+-✅ Busca otimizada para encontrar características com facilidade
+-✅ Dados dinâmicos atualizados a partir do banco Supabase
 
 ## 🤝 Contribuindo
 
